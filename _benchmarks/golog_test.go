@@ -3,7 +3,7 @@ package benchmarks
 import (
 	"testing"
 
-	"github.com/kataras/golog"
+	"github.com/readystock/golog"
 )
 
 var nopOutput = golog.NopOutput
@@ -31,4 +31,5 @@ func printGolog(i int) {
 	golog.Warnf("[%d] This is a warning message", i)
 	golog.Infof("[%d] This is an info message", i)
 	golog.Debugf("[%d] This is a debug message", i)
+	golog.Verbosef("[%d] This is a verbose message", i)
 }

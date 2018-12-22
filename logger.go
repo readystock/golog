@@ -36,7 +36,7 @@ type Logger struct {
 	//
 	// Note that this will not override the time and level prefix,
 	// if you want to customize the log message please read the examples
-	// or navigate to: https://github.com/kataras/golog/issues/3#issuecomment-355895870.
+	// or navigate to: https://github.com/readystock/golog/issues/3#issuecomment-355895870.
 	NewLine  bool
 	mu       sync.Mutex
 	Printer  *pio.Printer
@@ -307,6 +307,22 @@ func (l *Logger) Debugf(format string, args ...interface{}) {
 	if l.Level >= DebugLevel {
 		msg := fmt.Sprintf(format, args...)
 		l.Debug(msg)
+	}
+}
+
+// Debug will print when logger's Level is debug.
+func (l *Logger) Verbose(v ...interface{}) {
+	l.Log(VerboseLevel, v...)
+}
+
+// Debugf will print when logger's Level is debug.
+func (l *Logger) Verbosef(format string, args ...interface{}) {
+	// On debug mode don't even try to fmt.Sprintf if it's not required,
+	// this can be used to allow `Debugf` to be called without even the `fmt.Sprintf`'s
+	// performance cost if the logger doesn't allow debug logging.
+	if l.Level >= DebugLevel {
+		msg := fmt.Sprintf(format, args...)
+		l.Verbose(msg)
 	}
 }
 

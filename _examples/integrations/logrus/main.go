@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/kataras/golog"
+	"github.com/readystock/golog"
 	"github.com/sirupsen/logrus"
 )
 

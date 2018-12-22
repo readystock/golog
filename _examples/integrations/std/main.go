@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/kataras/golog"
+	"github.com/readystock/golog"
 )
 
 // simulate a log.Logger preparation:

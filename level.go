@@ -25,6 +25,8 @@ const (
 	InfoLevel
 	// DebugLevel will print on any level, fatals, errors, warnings, infos and debug logs.
 	DebugLevel
+
+	VerboseLevel
 )
 
 // Levels contains the levels and their
@@ -64,6 +66,11 @@ var Levels = map[Level]*LevelMetadata{
 		Name:         "debug",
 		RawText:      "[DBUG]",
 		ColorfulText: pio.Yellow("[DBUG]"),
+	},
+	VerboseLevel: {
+		Name:         "verbose",
+		RawText:      "[VERB]",
+		ColorfulText: pio.Gray("[VERB]"),
 	},
 }
 

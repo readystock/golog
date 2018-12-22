@@ -32,7 +32,7 @@ Package golog provides an easy to use foundation for your logging operations.
 
 Source code and other details for the project are available at GitHub:
 
-   https://github.com/kataras/golog
+   https://github.com/readystock/golog
 
 Current Version
 
@@ -42,7 +42,7 @@ Installation
 
 The only requirement is the Go Programming Language
 
-    $ go get -u github.com/kataras/golog
+    $ go get -u github.com/readystock/golog
 
 
 Overview
@@ -53,7 +53,7 @@ Example code:
 	package main
 
 	import (
-		"github.com/kataras/golog"
+		"github.com/readystock/golog"
 	)
 
 	func main() {
@@ -90,7 +90,7 @@ Example Code:
 	package main
 
 	import (
-		"github.com/kataras/golog"
+		"github.com/readystock/golog"
 	)
 
 	func main() {
@@ -174,7 +174,7 @@ Example Code:
 	package main
 
 	import (
-		"github.com/kataras/golog"
+		"github.com/readystock/golog"
 	)
 
 	func main() {
@@ -214,7 +214,7 @@ Example Code:
 	package main
 
 	import (
-		"github.com/kataras/golog"
+		"github.com/readystock/golog"
 	)
 
 	func main() {
@@ -311,7 +311,7 @@ Example Code:
 	package main
 
 	import (
-		"github.com/kataras/golog"
+		"github.com/readystock/golog"
 		"github.com/sirupsen/logrus"
 	)
 
@@ -362,7 +362,7 @@ Example Code:
 		"log"
 		"os"
 
-		"github.com/kataras/golog"
+		"github.com/readystock/golog"
 	)
 
 	// simulate a log.Logger preparation:
@@ -388,10 +388,10 @@ If you enjoy what you just saw and want to learn more, please follow the below l
 
 Examples:
 
-	https://github.com/kataras/golog/tree/master/_examples
+	https://github.com/readystock/golog/tree/master/_examples
 
 */
-package golog // import "github.com/kataras/golog"
+package golog // import "github.com/readystock/golog"
 
 // Version is the version string representation of the "golog" package.
 const Version = "0.0.8"

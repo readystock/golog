@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/kataras/golog"
+	"github.com/readystock/golog"
 )
 
 func main() {

@@ -39,7 +39,7 @@ Users are now able to add custom or modify existing levels with an easy to remem
 package main
 
 import (
-	"github.com/kataras/golog"
+	"github.com/readystock/golog"
 )
 
 func main() {
@@ -98,7 +98,7 @@ Example Code:
 package main
 
 import (
-    "github.com/kataras/golog"
+    "github.com/readystock/golog"
 )
 
 func main() {
@@ -130,7 +130,7 @@ func main() {
 }
 ```
 
-> This feature has been implemented after @carlca 's suggestion, [here](https://github.com/kataras/golog/issues/2).
+> This feature has been implemented after @carlca 's suggestion, [here](https://github.com/readystock/golog/issues/2).
 
 
 ## Th 27 July 2017 | v0.0.3

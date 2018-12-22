@@ -5,7 +5,7 @@ os:
 go:
   - "go1.9"
   - "go1.10"
-go_import_path: github.com/kataras/golog
+go_import_path: github.com/readystock/golog
 install:
   - go get ./...
 script:
