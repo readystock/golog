@@ -1,14 +1,9 @@
 # ✒️ golog
+[![Build Status](https://travis-ci.com/readystock/golog.svg?branch=master)](https://travis-ci.com/readystock/golog)
 
 _golog_ is a simple, fast and easy-to-use level-based logger written entirely in [GoLang](https://golang.org).
 This repository is a fork of kataras's golog.
 ![Output from win terminal](screen.png)
-
-[![build status](https://img.shields.io/travis/readystock/golog/master.svg?style=flat-square)](https://travis-ci.org/readystock/golog)
-[![report card](https://img.shields.io/badge/report%20card-a%2B-ff3333.svg?style=flat-square)](http://goreportcard.com/report/readystock/golog)
-[![godocs](https://img.shields.io/badge/online-documentation-0366d6.svg?style=flat-square)](https://godoc.org/github.com/readystock/golog)
-[![github issues](https://img.shields.io/github/issues/readystock/golog.svg?style=flat-square)](https://github.com/readystock/golog/issues?q=is%3Aopen+is%3Aissue)
-<!-- [![issue stats](https://img.shields.io/issuestats/i/github/readystock/golog.svg?style=flat-square)](https://github.com/readystock/golog/issues) -->
 
 ### 🥇 Features
 
