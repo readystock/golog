@@ -71,84 +71,84 @@ func SetLevel(levelName string) {
 
 // Print prints a log message without levels and colors.
 func Print(v ...interface{}) {
-	Default.Print(v...)
+    Default.Print(1, v...)
 }
 
 // Println prints a log message without levels and colors.
 // It adds a new line at the end.
 func Println(v ...interface{}) {
-	Default.Println(v...)
+    Default.Println(5, v...)
 }
 
 // Logf prints a leveled log message to the output.
 // This method can be used to use custom log levels if needed.
 // It adds a new line in the end.
 func Logf(level Level, format string, args ...interface{}) {
-	Default.Logf(level, format, args...)
+    Default.Logf(6, level, format, args...)
 }
 
 // Fatal `os.Exit(1)` exit no matter the level of the logger.
 // If the logger's level is fatal, error, warn, info or debug
 // then it will print the log message too.
 func Fatal(v ...interface{}) {
-	Default.Fatal(v...)
+    Default.Fatal(6, v...)
 }
 
 // Fatalf will `os.Exit(1)` no matter the level of the logger.
 // If the logger's level is fatal, error, warn, info or debug
 // then it will print the log message too.
 func Fatalf(format string, args ...interface{}) {
-	Default.Fatalf(format, args...)
+    Default.Fatalf(6, format, args...)
 }
 
 // Error will print only when logger's Level is error, warn, info or debug.
 func Error(v ...interface{}) {
-	Default.Error(v...)
+    Default.Error(6, v...)
 }
 
 // Errorf will print only when logger's Level is error, warn, info or debug.
 func Errorf(format string, args ...interface{}) {
-	Default.Errorf(format, args...)
+    Default.Errorf(6, format, args...)
 }
 
 // Warn will print when logger's Level is warn, info or debug.
 func Warn(v ...interface{}) {
-	Default.Warn(v...)
+    Default.Warn(6, v...)
 }
 
 // Warnf will print when logger's Level is warn, info or debug.
 func Warnf(format string, args ...interface{}) {
-	Default.Warnf(format, args...)
+    Default.Warnf(6, format, args...)
 }
 
 // Info will print when logger's Level is info or debug.
 func Info(v ...interface{}) {
-	Default.Info(v...)
+    Default.Info(6, v...)
 }
 
 // Infof will print when logger's Level is info or debug.
 func Infof(format string, args ...interface{}) {
-	Default.Infof(format, args...)
+    Default.Infof(6, format, args...)
 }
 
 // Debug will print when logger's Level is debug.
 func Debug(v ...interface{}) {
-	Default.Debug(v...)
+    Default.Debug(6, v...)
 }
 
 // Debugf will print when logger's Level is debug.
 func Debugf(format string, args ...interface{}) {
-	Default.Debugf(format, args...)
+    Default.Debugf(6, format, args...)
 }
 
 // Debug will print when logger's Level is debug.
 func Verbose(v ...interface{}) {
-	Default.Verbose(v...)
+    Default.Verbose(6, v...)
 }
 
 // Debugf will print when logger's Level is debug.
 func Verbosef(format string, args ...interface{}) {
-	Default.Verbosef(format, args...)
+    Default.Verbosef(6, format, args...)
 }
 
 // Install receives  an external logger
