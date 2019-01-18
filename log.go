@@ -12,6 +12,10 @@ type Log struct {
 	Time time.Time
 	// Level is the log level.
 	Level Level
+    // File that called the log message
+    File string
+    // Line number of the log call.
+    Line int
 	// Message is the string reprensetation of the log's main body.
 	Message string
 	// NewLine returns false if this Log
