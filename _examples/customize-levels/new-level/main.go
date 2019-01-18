@@ -29,6 +29,7 @@ func main() {
 
 	// create a new golog logger
 	myLogger := golog.New()
+	myLogger.StackDepth -= 1
 
 	// set its level to the higher in order to see it
 	// ("success" is the name we gave to our level)

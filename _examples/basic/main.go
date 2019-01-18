@@ -19,8 +19,14 @@ func main() {
 
 	golog.Println("This is a raw message, no levels, no colors.")
 	golog.Info("This is an info message, with colors (if the output is terminal)")
+	golog.Infof("This is an info message, with colors (if the output is terminal)")
 	golog.Warn("This is a warning message")
+	golog.Warnf("This is a warning message")
 	golog.Error("This is an error message")
+	golog.Errorf("This is an error message")
 	golog.Debug("This is a debug message")
+	golog.Debugf("This is a debug message")
+	golog.Verbose("This is a verbose message")
+	golog.Verbosef("This is a verbose message")
 	golog.Fatal("Fatal will exit no matter what, but it will also print the log message if logger's Level is >= FatalLevel")
 }
