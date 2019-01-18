@@ -91,7 +91,7 @@ func CallerInfo() string {
     ok := false
     name := ""
 
-    pc, file, line, ok = runtime.Caller(3)
+    pc, file, line, ok = runtime.Caller(6)
     if !ok {
         // The breaks below failed to terminate the loop, and we ran off the
         // end of the call stack.
@@ -109,18 +109,20 @@ func CallerInfo() string {
     }
     name = f.Name()
 
-    parts := strings.Split(file, "/")
+    goPath := os.Getenv("GOPATH")
+    parts := strings.Split(file, goPath+"/src/")
     file = parts[len(parts)-1]
-    if len(parts) > 1 {
-        dir := parts[len(parts)-2]
-        if (dir != "assert" && dir != "mock" && dir != "require") || file == "mock_test.go" {
-            return fmt.Sprintf("%s:%d", file, line)
-        }
-    }
-
-    // Drop the package
-    segments := strings.Split(name, ".")
-    name = segments[len(segments)-1]
+    return fmt.Sprintf("%s:%d", file, line)
+    // if len(parts) > 1 {
+    //     dir := parts[len(parts)-2]
+    //     if (dir != "assert" && dir != "mock" && dir != "require") || file == "mock_test.go" {
+    //         return fmt.Sprintf("%s:%d", file, line)
+    //     }
+    // }
+    //
+    // // Drop the package
+    // segments := strings.Split(name, ".")
+    // name = segments[len(segments)-1]
     // if isTest(name, "Test") ||
     //     isTest(name, "Benchmark") ||
     //     isTest(name, "Example") {
