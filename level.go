@@ -17,6 +17,8 @@ const (
 	// If the logger's level is fatal, error, warn, info or debug
 	// then it will print the log message too.
 	FatalLevel
+
+	CriticalLevel
 	// ErrorLevel will print only errors.
 	ErrorLevel
 	// WarnLevel will print errors and warnings.
@@ -27,6 +29,8 @@ const (
 	DebugLevel
 
 	VerboseLevel
+
+	TraceLevel
 )
 
 // Levels contains the levels and their
@@ -45,6 +49,12 @@ var Levels = map[Level]*LevelMetadata{
 		RawText: "[FTAL]",
 		// white foreground but red background, it's nice
 		ColorfulText: pio.RedBackground("[FTAL]"),
+	},
+	CriticalLevel: {
+		Name:    "critical",
+		RawText: "[CRIT]",
+		// white foreground but red background, it's nice
+		ColorfulText: pio.Blue("[CRIT]"),
 	},
 	ErrorLevel: {
 		Name:         "error",
@@ -71,6 +81,11 @@ var Levels = map[Level]*LevelMetadata{
 		Name:         "verbose",
 		RawText:      "[VERB]",
 		ColorfulText: pio.Gray("[VERB]"),
+	},
+	TraceLevel: {
+		Name:         "trace",
+		RawText:      "[TRCE]",
+		ColorfulText: pio.White("[TRCE]"),
 	},
 }
 

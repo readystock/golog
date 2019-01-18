@@ -317,6 +317,17 @@ func (l *Logger) Fatalf(format string, args ...interface{}) {
 	l.Log(l.StackDepth, FatalLevel, msg)
 }
 
+// Critical will print only when logger's Level is critical, error, warn, info or debug.
+func (l *Logger) Critical(v ...interface{}) {
+	l.Log(l.StackDepth, CriticalLevel, v...)
+}
+
+// Criticalf will print only when logger's Level is critical, error, warn, info or debug.
+func (l *Logger) Criticalf(format string, args ...interface{}) {
+	msg := fmt.Sprintf(format, args...)
+	l.Log(l.StackDepth, CriticalLevel, msg)
+}
+
 // Error will print only when logger's Level is error, warn, info or debug.
 func (l *Logger) Error(v ...interface{}) {
 	l.Log(l.StackDepth, ErrorLevel, v...)
@@ -376,9 +387,25 @@ func (l *Logger) Verbosef(format string, args ...interface{}) {
 	// On debug mode don't even try to fmt.Sprintf if it's not required,
 	// this can be used to allow `Debugf` to be called without even the `fmt.Sprintf`'s
 	// performance cost if the logger doesn't allow debug logging.
-	if l.Level >= DebugLevel {
+	if l.Level >= VerboseLevel {
 		msg := fmt.Sprintf(format, args...)
 		l.Log(l.StackDepth, VerboseLevel, msg)
+	}
+}
+
+// Trace will print when logger's Level is trace.
+func (l *Logger) Trace(v ...interface{}) {
+	l.Log(l.StackDepth, TraceLevel, v...)
+}
+
+// Tracef will print when logger's Level is trace.
+func (l *Logger) Tracef(format string, args ...interface{}) {
+	// On debug mode don't even try to fmt.Sprintf if it's not required,
+	// this can be used to allow `Debugf` to be called without even the `fmt.Sprintf`'s
+	// performance cost if the logger doesn't allow debug logging.
+	if l.Level >= TraceLevel {
+		msg := fmt.Sprintf(format, args...)
+		l.Log(l.StackDepth, TraceLevel, msg)
 	}
 }
 

@@ -102,6 +102,16 @@ func Fatalf(format string, args ...interface{}) {
 }
 
 // Error will print only when logger's Level is error, warn, info or debug.
+func Critical(v ...interface{}) {
+	Default.Critical(v...)
+}
+
+// Errorf will print only when logger's Level is error, warn, info or debug.
+func Criticalf(format string, args ...interface{}) {
+	Default.Criticalf(format, args...)
+}
+
+// Error will print only when logger's Level is error, warn, info or debug.
 func Error(v ...interface{}) {
 	Default.Error(v...)
 }
@@ -149,6 +159,16 @@ func Verbose(v ...interface{}) {
 // Debugf will print when logger's Level is debug.
 func Verbosef(format string, args ...interface{}) {
 	Default.Verbosef(format, args...)
+}
+
+// Trace will print when logger's Level is debug.
+func Trace(v ...interface{}) {
+	Default.Trace(v...)
+}
+
+// Tracef will print when logger's Level is debug.
+func Tracef(format string, args ...interface{}) {
+	Default.Tracef(format, args...)
 }
 
 // Install receives  an external logger
