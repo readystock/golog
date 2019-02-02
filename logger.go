@@ -255,6 +255,9 @@ func (l *Logger) SetLevel(levelName string) *Logger {
 
 func (l *Logger) print(stack int, level Level, msg string, newLine bool) {
 	if l.Level >= level {
+		if os.Getenv("TRAVIS") != "" && l.Level < ErrorLevel {
+			return
+		}
 		// newLine passed here in order for handler to know
 		// if this message derives from Println and Leveled functions
 		// or by simply, Print.
