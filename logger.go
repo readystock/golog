@@ -63,6 +63,12 @@ func New() *Logger {
 	}
 }
 
+func NewWithDepth(depth int) *Logger {
+	logger := New()
+	logger.StackDepth = depth
+	return logger
+}
+
 // acquireLog returns a new log fom the pool.
 func (l *Logger) acquireLog(stack int, level Level, msg string, withPrintln bool) *Log {
 	log, ok := l.logs.Get().(*Log)
