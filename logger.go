@@ -253,9 +253,15 @@ func (l *Logger) SetLevel(levelName string) *Logger {
 	return l
 }
 
+func (l *Logger) getLevel() Level {
+	l.mu.Lock()
+	defer l.mu.Unlock()
+	return l.Level
+}
+
 func (l *Logger) print(stack int, level Level, msg string, newLine bool) {
-	if l.Level >= level {
-		if os.Getenv("TRAVIS") != "" && l.Level > ErrorLevel {
+	if l.getLevel() >= level {
+		if os.Getenv("TRAVIS") != "" && l.getLevel() > ErrorLevel {
 			return
 		}
 		// newLine passed here in order for handler to know
@@ -380,7 +386,7 @@ func (l *Logger) Debugf(format string, args ...interface{}) {
 	// On debug mode don't even try to fmt.Sprintf if it's not required,
 	// this can be used to allow `Debugf` to be called without even the `fmt.Sprintf`'s
 	// performance cost if the logger doesn't allow debug logging.
-	if l.Level >= DebugLevel {
+	if l.getLevel() >= DebugLevel {
 		msg := fmt.Sprintf(format, args...)
 		l.Log(l.StackDepth, DebugLevel, msg)
 	}
@@ -396,7 +402,7 @@ func (l *Logger) Verbosef(format string, args ...interface{}) {
 	// On debug mode don't even try to fmt.Sprintf if it's not required,
 	// this can be used to allow `Debugf` to be called without even the `fmt.Sprintf`'s
 	// performance cost if the logger doesn't allow debug logging.
-	if l.Level >= VerboseLevel {
+	if l.getLevel() >= VerboseLevel {
 		msg := fmt.Sprintf(format, args...)
 		l.Log(l.StackDepth, VerboseLevel, msg)
 	}
@@ -412,7 +418,7 @@ func (l *Logger) Tracef(format string, args ...interface{}) {
 	// On debug mode don't even try to fmt.Sprintf if it's not required,
 	// this can be used to allow `Debugf` to be called without even the `fmt.Sprintf`'s
 	// performance cost if the logger doesn't allow debug logging.
-	if l.Level >= TraceLevel {
+	if l.getLevel() >= TraceLevel {
 		msg := fmt.Sprintf(format, args...)
 		l.Log(l.StackDepth, TraceLevel, msg)
 	}
